@@ -999,10 +999,418 @@ body {
     }
 } 
 
-/* Responsividade para o preview do orçamento */
+/* Breakpoints responsivos melhorados */
+
+/* Tablets e telas médias */
+@media (max-width: 1024px) {
+    .container {
+        padding: 20px 15px;
+    }
+    
+    .header {
+        padding: 25px;
+        gap: 30px;
+    }
+    
+    .header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .section {
+        padding: 30px;
+    }
+    
+    .form-grid.compact {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .form-grid.compact .form-group:nth-child(5),
+    .form-grid.compact .form-group:nth-child(6) {
+        grid-column: span 1;
+    }
+    
+    /* Melhorias para seção de orçamento em tablets */
+    .orcamento-section {
+        margin: 0 20px 20px 20px;
+        padding: 20px;
+    }
+    
+    .orcamento-section h2 {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+    
+    .orcamento-section .form-group label {
+        font-size: 0.8rem;
+        margin-bottom: 6px;
+    }
+    
+    .orcamento-section .form-group input {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        height: 36px;
+    }
+}
+
+/* Tablets pequenos */
+@media (max-width: 900px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+    
+    .header-info {
+        text-align: center;
+    }
+    
+    .form-grid.compact {
+        grid-template-columns: 1fr;
+    }
+    
+    .items-header,
+    .item-row {
+        grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr auto;
+        gap: 8px;
+        font-size: 0.85rem;
+    }
+    
+    .item-row .item-descricao {
+        grid-column: span 2;
+    }
+}
+
+/* Mobile - Telas pequenas */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .header {
+        margin-bottom: 20px;
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .header-left {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .header-logo {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+    }
+    
+    .header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    
+    .header p {
+        font-size: 0.9rem;
+        text-align: center;
+    }
+    
+    .header-info {
+        text-align: center;
+        font-size: 0.8rem;
+    }
+    
+    .header-info p {
+        margin-bottom: 6px;
+    }
+    
+    .section {
+        padding: 20px 15px;
+    }
+    
+    .section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
+    }
+    
+    .form-grid {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .form-grid.compact {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    /* Melhorias específicas para a seção de orçamento no mobile */
+    .orcamento-section {
+        margin: 0 15px 20px 15px;
+        padding: 15px;
+        border-radius: 12px;
+    }
+    
+    .orcamento-section h2 {
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        color: #374151;
+        text-align: center;
+    }
+    
+    .orcamento-section .form-grid.compact {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+    
+    .orcamento-section .form-group label {
+        font-size: 0.9rem;
+        color: #374151;
+        margin-bottom: 8px;
+        font-weight: 500;
+        text-transform: none;
+        letter-spacing: normal;
+    }
+    
+    .orcamento-section .form-group input {
+        padding: 12px 16px;
+        font-size: 0.9rem;
+        border-radius: 8px;
+        border: 1px solid #d1d5db;
+        background: white;
+        height: auto;
+        min-height: 44px;
+    }
+    
+    .orcamento-section .form-group input:focus {
+        background: white;
+        border-color: #3b82f6;
+        box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+    }
+    
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: 6px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+    
+    .items-header {
+        display: none;
+    }
+    
+    .item-row {
+        display: flex;
+        flex-direction: column;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        padding: 15px;
+        background: #f8fafc;
+    }
+    
+    .item-row .item-number {
+        font-weight: bold;
+        color: #3b82f6;
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        text-align: center;
+        background: #3b82f6;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 4px;
+        width: fit-content;
+        margin: 0 auto 10px auto;
+    }
+    
+    .item-row .item-quantidade,
+    .item-row .item-medidas,
+    .item-row .item-descricao,
+    .item-row .item-valor,
+    .item-row .item-total {
+        margin-bottom: 8px;
+        padding: 8px 0;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .item-row .item-quantidade::before {
+        content: "Quantidade: ";
+        font-weight: bold;
+        color: #374151;
+    }
+    
+    .item-row .item-medidas::before {
+        content: "Medidas: ";
+        font-weight: bold;
+        color: #374151;
+    }
+    
+    .item-row .item-descricao::before {
+        content: "Descrição: ";
+        font-weight: bold;
+        color: #374151;
+    }
+    
+    .item-row .item-valor::before {
+        content: "Valor Unitário: ";
+        font-weight: bold;
+        color: #374151;
+    }
+    
+    .item-row .item-total::before {
+        content: "Total: ";
+        font-weight: bold;
+        color: #374151;
+    }
+    
+    .item-row .item-total {
+        font-weight: bold;
+        color: #059669;
+        font-size: 1.1rem;
+        border-bottom: none;
+    }
+    
+    .item-row .item-actions {
+        margin-top: 10px;
+        text-align: center;
+    }
+    
+    .medidas-container {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .medidas-container input {
+        width: 100%;
+    }
+    
+    .medidas-container span {
+        font-size: 0.8rem;
+        color: #6b7280;
+    }
+    
+    .actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .btn-success,
+    .btn-danger,
+    .btn-info {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .btn i {
+        margin-right: 8px;
+    }
+}
+
+/* Mobile pequeno */
+@media (max-width: 480px) {
+    .container {
+        padding: 5px;
+    }
+    
+    .header {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .header h1 {
+        font-size: 1.3rem;
+    }
+    
+    .header p {
+        font-size: 0.8rem;
+    }
+    
+    .header-info {
+        font-size: 0.75rem;
+    }
+    
+    .section {
+        padding: 15px 10px;
+    }
+    
+    .section h2 {
+        font-size: 1.2rem;
+        margin-bottom: 15px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.85rem;
+        padding: 8px 10px;
+    }
+    
+    .display-value {
+        font-size: 0.9rem;
+        padding: 8px 10px;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .btn-success,
+    .btn-danger,
+    .btn-info {
+        padding: 10px 15px;
+        font-size: 0.85rem;
+    }
+    
+    /* Melhorias para seção de orçamento em mobile pequeno */
+    .orcamento-section {
+        margin: 0 10px 15px 10px;
+        padding: 12px;
+    }
+    
+    .orcamento-section h2 {
+        font-size: 1rem;
+        margin-bottom: 12px;
+    }
+    
+    .orcamento-section .form-group label {
+        font-size: 0.85rem;
+        margin-bottom: 6px;
+    }
+    
+    .orcamento-section .form-group input {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+        min-height: 40px;
+    }
+}
+
+/* Modal responsivo */
+@media (max-width: 768px) {
+    .modal-content {
+        width: 95%;
+        max-width: none;
+        margin: 10px;
+        padding: 15px;
+        max-height: 90vh;
+    }
+    
+    .close {
+        top: 10px;
+        right: 10px;
+        width: 30px;
+        height: 30px;
+        font-size: 1rem;
+    }
+}
+
+/* Preview do orçamento responsivo */
 @media (max-width: 768px) {
     .orcamento-print {
-        padding: 20px;
+        padding: 15px;
+        font-size: 0.85rem;
     }
     
     .empresa-info {
@@ -1013,51 +1421,276 @@ body {
     }
     
     .empresa-logo {
-        width: 80px;
-        height: 80px;
+        width: 70px;
+        height: 70px;
     }
     
     .empresa-detalhes h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+        margin-bottom: 10px;
     }
     
     .empresa-contato {
+        flex-direction: column;
         justify-content: center;
-        gap: 10px;
+        gap: 8px;
+        text-align: center;
     }
     
     .empresa-contato span {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
+    }
+    
+    .empresa-contato i {
+        font-size: 0.9rem;
     }
     
     .documento-info {
         flex-direction: column;
         gap: 8px;
         text-align: center;
-        padding: 4px 8px;
-        font-size: 0.6rem;
+        padding: 10px;
+        font-size: 0.75rem;
     }
     
+    .doc-left h2 {
+        font-size: 1.2rem;
+    }
+    
+    .doc-left p,
     .doc-right p {
-        text-align: center;
+        font-size: 0.75rem;
+        margin-bottom: 5px;
+    }
+    
+    .cliente-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
     }
     
     .cliente-grid {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 8px;
+        font-size: 0.8rem;
+    }
+    
+    .cliente-grid div {
+        padding: 5px 0;
+        border-bottom: 1px solid #f1f5f9;
+    }
+    
+    .itens-table {
+        font-size: 0.75rem;
+        border-collapse: collapse;
+        width: 100%;
+    }
+    
+    .itens-table th,
+    .itens-table td {
+        padding: 6px 4px;
+        text-align: left;
+        border-bottom: 1px solid #e2e8f0;
+    }
+    
+    .itens-table th {
+        background: #f8fafc;
+        font-weight: 600;
+        color: #374151;
+    }
+    
+    .itens-table tr:nth-child(even) {
+        background: #f8fafc;
+    }
+    
+    .itens-table tr:hover {
+        background: #f1f5f9;
+    }
+    
+    .resumo-financeiro h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+    
+    .resumo-item {
+        font-size: 0.8rem;
+        padding: 8px 0;
+    }
+    
+    .resumo-item.total {
+        font-size: 0.9rem;
+        font-weight: bold;
+    }
+    
+    .observacoes h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
     }
     
     .obs-grid {
         grid-template-columns: 1fr;
-        gap: 10px;
+        gap: 8px;
+        font-size: 0.8rem;
+    }
+    
+    .obs-grid div {
+        padding: 8px 0;
+        border-bottom: 1px solid #f1f5f9;
     }
     
     .assinaturas {
         flex-direction: column;
-        gap: 30px;
+        gap: 20px;
+        margin-top: 20px;
     }
     
     .assinatura {
         width: 100%;
+        text-align: center;
+    }
+    
+    .assinatura-line {
+        height: 2px;
+        margin-bottom: 8px;
+    }
+    
+    .assinatura p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Mobile muito pequeno */
+@media (max-width: 360px) {
+    .header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .header p {
+        font-size: 0.75rem;
+    }
+    
+    .section h2 {
+        font-size: 1.1rem;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.8rem;
+        padding: 6px 8px;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .btn-success,
+    .btn-danger,
+    .btn-info {
+        padding: 8px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .orcamento-print {
+        padding: 10px;
+        font-size: 0.8rem;
+    }
+    
+    .empresa-detalhes h1 {
+        font-size: 1.2rem;
+    }
+    
+    .empresa-contato span {
+        font-size: 0.75rem;
+    }
+    
+    /* Melhorias para seção de orçamento em mobile muito pequeno */
+    .orcamento-section {
+        margin: 0 5px 10px 5px;
+        padding: 10px;
+    }
+    
+    .orcamento-section h2 {
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+    }
+    
+    .orcamento-section .form-group label {
+        font-size: 0.8rem;
+        margin-bottom: 5px;
+    }
+    
+    .orcamento-section .form-group input {
+        padding: 8px 10px;
+        font-size: 0.8rem;
+        min-height: 36px;
+    }
+}
+
+/* Orientação landscape em mobile */
+@media (max-width: 768px) and (orientation: landscape) {
+    .header {
+        flex-direction: row;
+        text-align: left;
+        gap: 20px;
+    }
+    
+    .header-left {
+        flex-direction: row;
+        gap: 15px;
+    }
+    
+    .header-info {
+        text-align: right;
+    }
+    
+    .form-grid.compact {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .actions {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    
+    .btn-primary,
+    .btn-secondary,
+    .btn-success,
+    .btn-danger,
+    .btn-info {
+        width: auto;
+        flex: 1;
+        min-width: 120px;
+    }
+}
+
+/* Melhorias para tablets em modo retrato */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+    .form-grid.compact {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .items-header,
+    .item-row {
+        grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr auto;
+        gap: 8px;
+    }
+}
+
+/* Melhorias para telas muito grandes */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1600px;
+    }
+    
+    .form-grid.compact {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .form-grid.compact .form-group:nth-child(4),
+    .form-grid.compact .form-group:nth-child(5),
+    .form-grid.compact .form-group:nth-child(6) {
+        grid-column: span 1;
     }
 } 
