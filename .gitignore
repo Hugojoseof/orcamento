@@ -1,0 +1,61 @@
+# Arquivos do sistema
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependências (se usar npm/yarn no futuro)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos temporários
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# IDEs e editores
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Arquivos de backup
+*.bak
+*.backup
+*.old
+
+# Arquivos de cache
+.cache/
+.parcel-cache/
+
+# Arquivos de ambiente
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Arquivos de build (se usar no futuro)
+dist/
+build/
+out/
+
+# Arquivos de teste
+coverage/
+.nyc_output/
+
+# Arquivos específicos do projeto
+# (mantenha os arquivos importantes como logo-barros.png) 

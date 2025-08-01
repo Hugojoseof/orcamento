@@ -1,0 +1,40 @@
+{
+  "name": "gerador-orcamentos-barros",
+  "version": "1.0.0",
+  "description": "Sistema profissional para geração de orçamentos da Barros Vidraçaria e Metalúrgica",
+  "main": "index.html",
+  "scripts": {
+    "start": "python3 -m http.server 8000",
+    "dev": "python3 -m http.server 8000",
+    "serve": "python3 -m http.server 8000"
+  },
+  "keywords": [
+    "orcamentos",
+    "vidracaria",
+    "metalurgia",
+    "barros",
+    "empresa-familiar",
+    "javascript",
+    "html",
+    "css",
+    "pdf"
+  ],
+  "author": "Hugo José",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hugojose/gerador-orcamentos-barros.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hugojose/gerador-orcamentos-barros/issues"
+  },
+  "homepage": "https://github.com/hugojose/gerador-orcamentos-barros#readme",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+} 

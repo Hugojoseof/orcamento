@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Gerador de Orçamentos - Vidraçaria</title>
+    <link rel="stylesheet" href="src/css/main.css?v=3.3">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="header-logo">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                </div>
+                <div class="header-title">
+                    <h1>Gerador de Orçamentos</h1>
+                    <p>Sistema profissional para vidraçaria</p>
+                </div>
+            </div>
+            <div class="header-info">
+                <p><i class="fas fa-map-marker-alt"></i> Rua Augustinho Filozina - Maria Emanuela</p>
+                <p><i class="fas fa-phone"></i> 84 9 9411-4275</p>
+                <p><i class="fas fa-envelope"></i> contato@barrosvidracaria.com.br</p>
+            </div>
+        </header>
+
+        <!-- Formulário de Orçamento -->
+        <div class="form-container">
+            <form id="orcamentoForm">
+                <!-- Dados da Empresa -->
+                <div class="section">
+                    <h2><i class="fas fa-briefcase"></i> Dados da Empresa</h2>
+                    <div class="form-grid compact">
+                        <div class="form-group">
+                            <label for="empresaNome">Nome da Empresa</label>
+                            <input type="text" id="empresaNome" value="BARROS VIDRAÇARIA E METALÚRGICA" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresaCnpj">CNPJ</label>
+                            <input type="text" id="empresaCnpj" value="00.000.000/0000-00" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresaEndereco">Endereço</label>
+                            <input type="text" id="empresaEndereco" value="Rua Augustinho Filozina - Maria Emanuela" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresaTelefone">Telefone</label>
+                            <input type="text" id="empresaTelefone" value="84 9 9411-4275" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresaEmail">Email</label>
+                            <input type="email" id="empresaEmail" value="contato@barrosvidracaria.com.br" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="empresaSite">Website</label>
+                            <input type="url" id="empresaSite" value="">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dados do Cliente -->
+                <div class="section">
+                    <h2><i class="fas fa-user"></i> Dados do Cliente</h2>
+                    <div class="form-grid compact">
+                        <div class="form-group">
+                            <label for="clienteNome">Nome do Cliente</label>
+                            <input type="text" id="clienteNome" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clienteTelefone">Telefone</label>
+                            <input type="text" id="clienteTelefone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clienteCpf">CPF/CNPJ</label>
+                            <input type="text" id="clienteCpf" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clienteEmail">Email</label>
+                            <input type="email" id="clienteEmail">
+                        </div>
+                        <div class="form-group">
+                            <label for="clienteEndereco">Endereço</label>
+                            <input type="text" id="clienteEndereco" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="clienteCidade">Cidade</label>
+                            <input type="text" id="clienteCidade" required>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dados do Orçamento -->
+                <div class="section orcamento-section">
+                    <h2><i class="fas fa-file-alt"></i> Dados do Orçamento</h2>
+                    <div class="form-grid compact">
+                        <div class="form-group">
+                            <label for="orcamentoNumero">Número do Orçamento</label>
+                            <input type="number" id="orcamentoNumero" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="orcamentoData">Data de Emissão</label>
+                            <input type="date" id="orcamentoData" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="orcamentoValidade">Validade (dias)</label>
+                            <input type="number" id="orcamentoValidade" value="30" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="orcamentoVendedor">Vendedor</label>
+                            <input type="text" id="orcamentoVendedor">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Itens do Orçamento -->
+                <div class="section">
+                    <h2><i class="fas fa-list"></i> Itens do Orçamento</h2>
+                    <div class="items-header">
+                        <div class="item-number">Item</div>
+                        <div class="item-quantidade">Qtd</div>
+                        <div class="item-medidas">Medidas</div>
+                        <div class="item-descricao">Descrição</div>
+                        <div class="item-valor">Valor Unit.</div>
+                        <div class="item-total">Total</div>
+                        <div class="item-actions">Ações</div>
+                    </div>
+                    <div id="itemsList" class="items-list">
+                        <!-- Itens serão adicionados dinamicamente -->
+                    </div>
+                    <button type="button" id="addItem" class="btn btn-secondary">
+                        <i class="fas fa-plus"></i> Adicionar Item
+                    </button>
+                </div>
+
+                <!-- Resumo Financeiro -->
+                <div class="section">
+                    <h2><i class="fas fa-calculator"></i> Resumo Financeiro</h2>
+                    <div class="form-grid compact">
+                        <div class="form-group">
+                            <label for="subtotal">Subtotal</label>
+                            <div id="subtotal" class="display-value">R$ 0,00</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="descontoPercentual">Desconto (%)</label>
+                            <input type="number" id="descontoPercentual" min="0" max="100" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label for="descontoValor">Valor do Desconto</label>
+                            <div id="descontoValor" class="display-value">R$ 0,00</div>
+                        </div>
+                        <div class="form-group">
+                            <label for="acrescimoValor">Acréscimo (R$)</label>
+                            <input type="number" id="acrescimoValor" min="0" step="0.01">
+                        </div>
+                        <div class="form-group">
+                            <label for="total">Total</label>
+                            <div id="total" class="display-value total">R$ 0,00</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Observações -->
+                <div class="section">
+                    <h2><i class="fas fa-sticky-note"></i> Observações</h2>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="formaPagamento">Forma de Pagamento</label>
+                            <textarea id="formaPagamento" rows="3" placeholder="Ex: 50% na assinatura do contrato e 50% na entrega"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="condicoes">Condições</label>
+                            <textarea id="condicoes" rows="3" placeholder="Condições especiais de pagamento ou entrega"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="prazoEntrega">Prazo de Entrega</label>
+                            <textarea id="prazoEntrega" rows="3" placeholder="Prazo estimado para entrega"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="observacoes">Observações Adicionais</label>
+                            <textarea id="observacoes" rows="3" placeholder="Informações adicionais sobre o serviço..."></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botões de Ação -->
+                <div class="actions">
+                    <button type="button" id="previewBtn" class="btn btn-primary">
+                        <i class="fas fa-eye"></i> Visualizar
+                    </button>
+                    <button type="button" id="printBtn" class="btn btn-success">
+                        <i class="fas fa-print"></i> Imprimir
+                    </button>
+                    <button type="button" id="saveBtn" class="btn btn-info">
+                        <i class="fas fa-download"></i> Salvar Arquivo
+                    </button>
+                    <button type="button" id="clearBtn" class="btn btn-danger">
+                        <i class="fas fa-broom"></i> Limpar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Modal de Preview -->
+    <div id="previewModal" class="modal">
+        <div class="modal-content">
+            <button type="button" class="close" onclick="window.App.orcamentoGenerator.closeModal()" title="Fechar">
+                <i class="fas fa-times"></i>
+            </button>
+            <div id="orcamentoPreview"></div>
+        </div>
+    </div>
+
+    <!-- Script principal -->
+    <script type="module" src="src/js/app.js?v=3.0"></script>
+</body>
+</html> 
