@@ -181,7 +181,7 @@ export class FormManager {
             'empresaCnpj',
             'empresaEndereco',
             'empresaTelefone',
-            'empresaEmail',
+            'empresaInstagram',
             'clienteNome',
             'clienteTelefone',
             'clienteCpf',

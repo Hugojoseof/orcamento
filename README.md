@@ -103,7 +103,10 @@ orçamento/
 
 ### **🏢 Dados da Empresa**
 - Nome: Barros Vidraçaria e Metalúrgica
-- CNPJ, endereço, telefone, email, site
+- CNPJ: 61.577.922/0001-50
+- Endereço: Rua Augustinho Filozina N159 - Bairro Maria Emanuela - São Miguel-RN
+- Telefone: (84) 9 9411-4275
+- Instagram: @barrosvidracaria
 - Logo da empresa integrado
 
 ### **👤 Dados do Cliente**
@@ -175,8 +178,8 @@ Este projeto foi desenvolvido para uso específico da **Barros Vidraçaria e Met
 
 **Barros Vidraçaria e Metalúrgica**
 - 📞 Telefone: (84) 9 9411-4275
-- 📧 Email: hugo@hugojose.dev
-- 📍 Endereço: Rua Augustinho Filozina - Maria Emanuela
+- 📷 Instagram: @barrosvidracaria
+- 📍 Endereço: Rua Augustinho Filozina N159 - Bairro Maria Emanuela - São Miguel-RN
 
 ---
 

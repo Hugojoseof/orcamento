@@ -193,11 +193,10 @@ export class OrcamentoGenerator {
         return {
             empresa: {
                 nome: this.getInputValue('empresaNome') || 'BARROS VIDRAÇARIA E METALÚRGICA',
-                cnpj: this.getInputValue('empresaCnpj') || '00.000.000/0000-00',
-                endereco: this.getInputValue('empresaEndereco') || 'Rua Augustinho Filozina - Maria Emanuela',
+                cnpj: this.getInputValue('empresaCnpj') || '61.577.922/0001-50',
+                endereco: this.getInputValue('empresaEndereco') || 'Rua Augustinho Filozina N159 - Bairro Maria Emanuela - São Miguel-RN',
                 telefone: this.getInputValue('empresaTelefone') || '84 9 9411-4275',
-                email: this.getInputValue('empresaEmail') || 'contato@barrosvidracaria.com.br',
-                site: this.getInputValue('empresaSite') || 'www.barrosvidracaria.com.br'
+                instagram: this.getInputValue('empresaInstagram') || '@barrosvidracaria'
             },
             cliente: {
                 nome: this.getInputValue('clienteNome') || 'Cliente',
@@ -376,8 +375,7 @@ export class OrcamentoGenerator {
                                 <span><i class="fas fa-id-card"></i> CNPJ: ${Formatters.formatCPFCNPJ(data.empresa.cnpj)}</span>
                                 <span><i class="fas fa-map-marker-alt"></i> ${data.empresa.endereco}</span>
                                 <span><i class="fas fa-phone"></i> ${Formatters.formatPhone(data.empresa.telefone)}</span>
-                                <span><i class="fas fa-envelope"></i> ${data.empresa.email}</span>
-                                ${data.empresa.site ? `<span><i class="fas fa-globe"></i> ${data.empresa.site}</span>` : ''}
+                                <span><i class="fab fa-instagram"></i> ${data.empresa.instagram || '@barrosvidracaria'}</span>
                             </div>
                         </div>
                     </div>
