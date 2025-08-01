@@ -24,8 +24,8 @@ export class Formatters {
 
     /**
      * Formata medidas (altura x largura)
-     * @param {number} altura - Altura em cm
-     * @param {number} largura - Largura em cm
+     * @param {number} altura - Altura em m
+     * @param {number} largura - Largura em m
      * @returns {string} Medidas formatadas
      */
     static formatMedidas(altura, largura) {
@@ -36,7 +36,7 @@ export class Formatters {
         const alturaStr = altura ? altura.toString() : '0';
         const larguraStr = largura ? largura.toString() : '0';
         
-        return `${alturaStr} x ${larguraStr} cm`;
+        return `${alturaStr} x ${larguraStr} m`;
     }
 
     /**

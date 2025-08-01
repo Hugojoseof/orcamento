@@ -37,7 +37,7 @@ export class ItemManager {
                 <input type="number" class="item-altura" placeholder="Altura" step="0.01" oninput="window.App.orcamentoGenerator.calculateTotals()">
                 <span>x</span>
                 <input type="number" class="item-largura" placeholder="Largura" step="0.01" oninput="window.App.orcamentoGenerator.calculateTotals()">
-                <span style="font-size: 0.75rem; color: #9ca3af;">cm</span>
+                <span style="font-size: 0.75rem; color: #9ca3af;">m</span>
             </div>
             <input type="text" class="item-descricao" placeholder="Descrição do produto/serviço" oninput="window.App.orcamentoGenerator.calculateTotals()">
             <input type="number" class="item-valor" value="0" min="0" step="0.01" oninput="window.App.orcamentoGenerator.calculateTotals()">
